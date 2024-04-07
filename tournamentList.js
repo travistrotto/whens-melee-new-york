@@ -1,10 +1,15 @@
+/*
+ * tournamentList.js
+ * Displays a list of all tournaments retrieved by fetch.js
+ */
+
 const subtitleElement = document.getElementById('subtitle');
 const today = new Date();
 const oneWeekFromToday = new Date(today);
 oneWeekFromToday.setDate(oneWeekFromToday.getDate() + 7);
 subtitleElement.textContent = `${today.toDateString()} - ${oneWeekFromToday.toDateString()} `;
 
-function displayTournaments(tournaments) {
+function tournamentList(tournaments) {
     const tournamentList = document.getElementById('tournament-list');
     tournamentList.innerHTML = '';
 
