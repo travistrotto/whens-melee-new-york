@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    /* Added background color */
+}
+
+a {
+    color: #45cff2;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Mobile responsive header */
+.header {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    /* Hide overflow to crop top and bottom */
+    position: relative;
+    /* Add position relative for absolute positioning */
+}
+
+.header img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* Crop image to cover container */
+    max-height: 35vh;
+    /* Limit image height to viewport height */
+    border-bottom: 2px solid #45cff2;
+}
+
+/* Title and subtitle */
+.title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.subtitle {
+    font-style: italic;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.tournament {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    /* Increased margin for better separation */
+    padding: 15px;
+    /* Increased padding for better spacing */
+    border-radius: 8px;
+    /* Increased border radius for a smoother look */
+    background-color: #fff;
+    /* Added background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Added box shadow for depth */
+}
+
+.tournament h2 {
+    margin-top: 0;
+    /* Remove default margin for consistency */
+    font-size: 1.2em;
+    /* Increased font size for better readability */
+    color: #333;
+    /* Changed font color for better contrast */
+}
+
+.tournament ul {
+    list-style-type: none;
+    /* Remove default list styling */
+    padding: 0;
+    /* Remove default padding */
+}
+
+.tournament li {
+    margin-bottom: 10px;
+    /* Increased margin for better separation */
+    font-size: 1em;
+    /* Adjusted font size */
+    color: #666;
+    /* Changed font color for better contrast */
+}
