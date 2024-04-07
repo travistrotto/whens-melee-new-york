@@ -34,3 +34,6 @@ function fetchTournamentData(page) {
         console.error('Error fetching data:', error);
     });
 }
+
+ // JavaScript to update the current year in the footer
+ document.getElementById('current-year').textContent = new Date().getFullYear();
