@@ -3,12 +3,15 @@ body {
     margin: 0;
     padding: 0;
     background-image: url('img/bg-pattern-light.png');
-    /* Repeat the background image both horizontally and vertically */
     background-repeat: repeat;
 }
 
 a {
     color: #45cff2;
+}
+
+a:hover {
+    color: #97e6f2;
 }
 
 .container {
@@ -17,7 +20,7 @@ a {
     padding: 20px;
 }
 
-.header {
+.cover-photo {
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -28,23 +31,29 @@ a {
     position: relative;
 }
 
-.header img {
+.cover-photo img {
     width: 100%;
     height: auto;
     object-fit: cover;
     max-height: 35vh;
-    /* Header image crop */
     border-bottom: 2px solid #45cff2;
 }
-
 
 .title {
     margin-bottom: 10px;
 }
 
-.title>h2 {
-    font-size: 48px;
+.title-image {
+    display: inline-block;
+    max-width: 75px;
+    vertical-align: middle;
     margin-right: 15px;
+}
+
+.title>h1 {
+    margin-bottom: 10px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 #headline {
@@ -102,13 +111,4 @@ a {
     right: 0;
     margin: 10px;
     color: azure;
-}
-
-.image-inline {
-    display: inline-block;
-    max-width: 50px;
-    /* Adjust the width as per your requirement */
-    vertical-align: middle;
-    /* Aligns the image vertically with the text */
-    margin-right: 15px;
 }
