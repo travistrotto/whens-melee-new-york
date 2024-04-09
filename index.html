@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
     <!-- Cover photo -->
     <div class="cover-photo">
         <img src="img/nycmeleebanner.png" alt="NYC Melee Banner">
@@ -27,16 +28,18 @@
 
         <!-- List of tournaments-->
         <div id="tournament-list"></div>
-
-        <button id="next-week-btn">Next Week</button>
-        <button id="current-week-btn">Current Week</button>
+        <div class="button-container">
+            <button id="next-week-btn" class="button-style">Next Week</button>
+            <button id="current-week-btn" class="button-style">Current Week</button>
+        </div>
     </div>
 
     <!-- Footer -->
     <div class="footer">
-        <p>Showing all tournaments listed in New York State</p>
+        <p>Showing all tournaments listed in New York State.</p>
         <p>Data sourced from <a href="https://start.gg">start.gg</a></p>
-        <p>Managed by <a href="https://x.com/travistrotto">@travistrotto</a> &copy; <span id="current-year"></span>
+        <p id="monospace">by <a href="https://x.com/travistrotto">@travistrotto</a> &copy; <span
+                id="current-year"></span>
         </p>
     </div>
 

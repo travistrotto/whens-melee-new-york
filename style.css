@@ -1,5 +1,20 @@
+/* Variables */
+:root {
+    --main-font: Arial, sans-serif;
+    --primary-color: #45cff2;
+    --hover-color: #97e6f2;
+    --max-container-width: 800px;
+    --cover-border-color: #45cff2;
+    --footer-background-color: #333;
+    --footer-text-color: #fff;
+    --tournament-border-color: #45cff2;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+    --button-background-color: #45cff2;
+    --button-text-color: white;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--main-font);
     margin: 0;
     padding: 0;
     background-image: url('img/bg-pattern-light.png');
@@ -7,15 +22,15 @@ body {
 }
 
 a {
-    color: #45cff2;
+    color: var(--primary-color);
 }
 
 a:hover {
-    color: #97e6f2;
+    color: var(--hover-color);
 }
 
 .container {
-    max-width: 800px;
+    max-width: var(--max-container-width);
     margin: 0 auto;
     padding: 20px;
 }
@@ -36,7 +51,7 @@ a:hover {
     height: auto;
     object-fit: cover;
     max-height: 35vh;
-    border-bottom: 2px solid #45cff2;
+    border-bottom: 2px solid var(--cover-border-color);
 }
 
 .title {
@@ -50,6 +65,10 @@ a:hover {
     margin-right: 15px;
 }
 
+.title-image:hover {
+    transform: translateY(-2px);
+}
+
 .title>h1 {
     margin-bottom: 10px;
     display: inline-block;
@@ -61,11 +80,11 @@ a:hover {
 }
 
 .subtitle {
+    font-family: monospace;
     font-style: italic;
     margin-bottom: 20px;
     margin-left: 10px;
 }
-
 
 .tournament h2 {
     margin-top: 0;
@@ -79,6 +98,7 @@ a:hover {
 }
 
 .tournament li {
+    font-family: monospace;
     margin-bottom: 10px;
     font-size: 1em;
     color: #666;
@@ -86,23 +106,28 @@ a:hover {
 }
 
 .footer {
+    font-family: "Trebuchet MS", sans-serif;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #333;
-    color: #fff;
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
     padding: 10px 20px;
     text-align: center;
 }
 
+#monospace {
+    font-family: monospace;
+}
+
 .tournament {
     position: relative;
-    border: 1px solid #45cff2;
+    border: 1px solid var(--tournament-border-color);
     margin-bottom: 20px;
     padding: 16px;
     border-radius: 10px;
     background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px var(--box-shadow-color);
 }
 
 .icon-container {
@@ -111,4 +136,28 @@ a:hover {
     right: 0;
     margin: 10px;
     color: azure;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+
+.button-style {
+    background-color: var(--button-background-color);
+    border: none;
+    color: var(--button-text-color);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.button-style:hover {
+    transform: translateY(-2px);
 }

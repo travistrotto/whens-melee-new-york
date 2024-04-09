@@ -4,14 +4,29 @@
  */
 
 // Show date range of tournaments as subtitle
-const subtitleElement = document.getElementById('subtitle');
-const today = new Date();
-const oneWeekFromToday = new Date(today);
-oneWeekFromToday.setDate(oneWeekFromToday.getDate() + 7);
-subtitleElement.textContent = `
+function updateSubtitle() {
+    const subtitleElement = document.getElementById('subtitle');
+    const today = new Date();
+    const oneWeekFromToday = new Date(today);
+    oneWeekFromToday.setDate(oneWeekFromToday.getDate() + 7);
+    const twoWeeksFromToday = new Date(today);
+    twoWeeksFromToday.setDate(twoWeeksFromToday.getDate() + 14);
+
+    let startDate, endDate;
+
+    if (showingNextWeek) {
+        startDate = oneWeekFromToday;
+        endDate = twoWeeksFromToday;
+    } else {
+        startDate = today;
+        endDate = oneWeekFromToday;
+    }
+
+    subtitleElement.textContent = `
 Showing tournaments occuring:
-${today.toDateString()} - ${oneWeekFromToday.toDateString()} 
+${startDate.toDateString()} - ${endDate.toDateString()} 
 `;
+}
 
 // List all tournaments returned by start.gg api
 function tournamentList(tournaments) {
@@ -35,11 +50,16 @@ function tournamentList(tournaments) {
             const event = tournament.events[0];
             const eventItem = document.createElement('p');
             const calendarSVG = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 0 1 1 1v1h4V3a1 1 0 1 1 2 0v1h3a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3V3a1 1 0 0 1 1-1zM8 6H5v3h14V6h-3v1a1 1 0 1 1-2 0V6h-4v1a1 1 0 0 1-2 0V6zm11 5H5v8h14v-8z" fill="#0D0D0D"/></svg>`;
-            eventItem.innerHTML = `${calendarSVG} ${new Date(event.startAt * 1000).toLocaleDateString()}`;
+            const dateSpan = document.createElement('span');
+            dateSpan.style.fontFamily = "Trebuchet MS"; // Setting font-family to monospace
+            dateSpan.textContent = new Date(event.startAt * 1000).toLocaleDateString();
+            eventItem.innerHTML = `${calendarSVG} `;
+            eventItem.appendChild(dateSpan); // Appending dateSpan to eventItem
             eventItem.style.display = "inline";
             tournamentDate.appendChild(eventItem);
         }
         tournamentDiv.appendChild(tournamentDate);
+
 
         const space = document.createTextNode(' - ');
         tournamentDiv.appendChild(space);
